@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>uk.co.signitrade</groupId>
+	<artifactId>signitrade-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Sign I Trade  (POM Only)</name>
+	<!--ciManagement / -->
+	<inceptionYear>2012</inceptionYear>
+	<!--mailingLists / -->
+	<developers>
+		<developer>
+			<id>Lalitend.Swain</id>
+			<name>Lalitendu Swain</name>
+			<email>lalitendu.swain@gmail.com</email>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+		<developer>
+			<id>bikram.nayak</id>
+			<name>Bikram Nayak</name>
+			<email>bikram.nayak1@gmail.com</email>
+			<roles>
+				<role>developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<modules>
+		<module>repositories/signitrade-data-repository</module>
+		<module>repositories/signitrade-user-repository</module>
+		<module>services/signitrade-data-service</module>
+		<module>services/signitrade-user-service</module>
+		<module>application/signitrade-ui</module>
+
+	</modules>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- Too set up an application with a database, change the artifactId 
+				below to tapestry-hibernate, and add a dependency on your JDBC driver. You'll 
+				also need to add Hibernate configuration files, such as hibernate.cfg.xml. -->
+
+			<!-- This adds automatic compression of JavaScript and CSS when in production 
+				mode. -->
+
+			<!-- Uncomment this to add support for file uploads: <dependency> <groupId>org.apache.tapestry</groupId> 
+				<artifactId>tapestry-upload</artifactId> <version>${tapestry-release-version}</version> 
+				</dependency> -->
+
+			<!-- A dependency on either JUnit or TestNG is required, or the surefire 
+				plugin (which runs the tests) will fail, preventing Maven from packaging 
+				the WAR. Tapestry includes a large number of testing facilities designed 
+				for use with TestNG (http://testng.org/), so it's recommended. -->
+			<dependency>
+				<groupId>org.testng</groupId>
+				<artifactId>testng</artifactId>
+				<version>${testng-release-version}</version>
+				<scope>test</scope>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>${mockito-version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<!-- Provided by the servlet container, but sometimes referenced in the 
+				application code. -->
+
+
+			<!-- Provide dependency to the Tapestry javadoc taglet which replaces 
+				the Maven component report -->
+
+			<!-- signitrade-dependencies -->
+
+			<dependency>
+				<groupId>uk.co.signitrade.data.service</groupId>
+				<artifactId>signitrade-data-service</artifactId>
+				<version>${signitrade-project-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>uk.co.signitrade.user.service</groupId>
+				<artifactId>signitrade-user-service</artifactId>
+				<version>${signitrade-project-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>uk.co.signitrade.data.repository</groupId>
+				<artifactId>signitrade-data-repository</artifactId>
+				<version>${signitrade-project-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>uk.co.signitrade.user.repository</groupId>
+				<artifactId>signitrade-user-repository</artifactId>
+				<version>${signitrade-project-version}</version>
+			</dependency>
+
+			<!-- SPRING -->
+
+			<!-- Spring framework -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+
+			<!-- Struts 2 + Spring plugins -->
+			<dependency>
+				<groupId>org.apache.struts</groupId>
+				<artifactId>struts2-spring-plugin</artifactId>
+				<version>2.1.8</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>tools</artifactId>
+						<groupId>com.sun</groupId>
+					</exclusion>
+				</exclusions>
+
+			</dependency>
+
+			<!-- DB Dependencies -->
+			<!-- MySQL database driver -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>5.1.9</version>
+			</dependency>
+
+			<!-- Hibernate core -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate</artifactId>
+				<version>3.2.7.ga</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javax.transaction</groupId>
+						<artifactId>jta</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- Hibernate core library dependency start -->
+			<dependency>
+				<groupId>dom4j</groupId>
+				<artifactId>dom4j</artifactId>
+				<version>1.6.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>asm</groupId>
+				<artifactId>asm-all</artifactId>
+				<version>2.2</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>1.1.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-collections</groupId>
+				<artifactId>commons-collections</artifactId>
+				<version>3.2.1</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cglib</groupId>
+				<artifactId>cglib</artifactId>
+				<version>2.1</version>
+			</dependency>
+			<!-- Hibernate core library dependency end -->
+
+			<!-- Hibernate query library dependency start -->
+			<dependency>
+				<groupId>antlr</groupId>
+				<artifactId>antlr</artifactId>
+				<version>2.7.7</version>
+			</dependency>
+			<!-- Hibernate query library dependency end -->
+
+			<!-- Struts 2 -->
+			<dependency>
+				<groupId>org.apache.struts</groupId>
+				<artifactId>struts2-core</artifactId>
+				<version>2.1.8</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javassist</groupId>
+				<artifactId>javassist</artifactId>
+				<version>3.12.1.GA</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- maven plugins -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<version>1.7</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>${maven.checkstyle.plugin.version}</version>
+					<configuration>
+						<configLocation>src/main/config/checkstyle-sun-maven.xml</configLocation>
+						<failOnViolation>false</failOnViolation>
+						<failsOnError>false</failsOnError>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>2.5</version>
+					<configuration>
+						<filesets>
+							<fileset>
+								<directory>test-output</directory>
+								<followSymlinks>false</followSymlinks>
+							</fileset>
+							<fileset>
+								<directory>.</directory>
+								<includes>
+									<include>TempWmicBatchFile.bat</include>
+								</includes>
+							</fileset>
+						</filesets>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.5.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.7</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>2.8</version>
+					<configuration>
+						<defaultJavaBundleDir>APP-INF/lib/</defaultJavaBundleDir>
+						<skinnyWars>true</skinnyWars>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.4</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.3.2</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-remote-resources-plugin</artifactId>
+					<version>1.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>2.6</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>${maven.site.plugin.version}</version>
+					<configuration>
+						<locales>en</locales>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.12.3</version>
+				</plugin>
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>2.2</version>
+					<configuration>
+						<archive>
+							<manifest>
+								<addClasspath>false</addClasspath>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.mortbay.jetty</groupId>
+					<artifactId>jetty-maven-plugin</artifactId>
+					<version>${project.custom.jetty.version}</version>
+					<configuration>
+						<scanIntervalSeconds>10</scanIntervalSeconds>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.txt</include>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/*.properties</exclude>
+					<exclude>**/*.txt</exclude>
+					<exclude>**/*.xml</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<testResources>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.properties</include>
+					<include>**/*.txt</include>
+					<include>**/*.xml</include>
+				</includes>
+			</testResource>
+			<testResource>
+				<directory>src/test/resources</directory>
+				<filtering>false</filtering>
+				<excludes>
+					<exclude>**/*.properties</exclude>
+					<exclude>**/*.txt</exclude>
+					<exclude>**/*.xml</exclude>
+				</excludes>
+			</testResource>
+		</testResources>
+
+	</build>
+
+	<profiles>
+		<profile>
+			<id>all</id>
+			<modules>
+				<module>database</module>
+			</modules>
+		</profile>
+	</profiles>
+
+
+	<properties>
+		<tapestry-release-version>5.3.3</tapestry-release-version>
+		<servlet-api-release-version>2.5</servlet-api-release-version>
+		<testng-release-version>5.14.9</testng-release-version>
+		<jetty-version>7.6.4.v20120524</jetty-version>
+		<signitrade-project-version>0.0.1-SNAPSHOT</signitrade-project-version>
+		<org.springframework.version>2.5.6</org.springframework.version>
+		<org.springframework.data.version>3.0.5.RELEASE</org.springframework.data.version>
+		<hsqldb.version>2.2.8</hsqldb.version>
+		<org.hibernate.hibernate-entitymanager.version>4.0.1.Final</org.hibernate.hibernate-entitymanager.version>
+		<mockito-version>1.9.0</mockito-version>
+		<!-- custom properties -->
+		<project.custom.encoding>UTF-8</project.custom.encoding>
+		<project.custom.java.version>1.5</project.custom.java.version>
+		<project.custom.slf4j.version>1.6.4</project.custom.slf4j.version>
+		<project.custom.struts2.version>2.3.4.1</project.custom.struts2.version>
+		<project.custom.tiles2.version>2.0.6</project.custom.tiles2.version>
+		<project.custom.jetty.version>7.6.3.v20120416</project.custom.jetty.version>
+		<maven.checkstyle.plugin.version>2.9.1</maven.checkstyle.plugin.version>
+		<maven.site.plugin.version>3.1</maven.site.plugin.version>
+		<org.apache.axis2.version>1.6.2</org.apache.axis2.version>
+		<au.com.alderaan.eclipselink-staticweave-maven-plugin.version>1.0.3</au.com.alderaan.eclipselink-staticweave-maven-plugin.version>
+		<!-- override maven properties -->
+		<maven.test.failure.ignore>true</maven.test.failure.ignore>
+		<maven.compiler.source>${project.custom.java.version}</maven.compiler.source>
+		<maven.compiler.target>${project.custom.java.version}</maven.compiler.target>
+		<project.build.sourceEncoding>${project.custom.encoding}</project.build.sourceEncoding>
+		<project.build.outputEncoding>${project.custom.encoding}</project.build.outputEncoding>
+		<project.reporting.outputEncoding>${project.custom.encoding}</project.reporting.outputEncoding>
+
+	</properties>
+
+	<description>SignITrade</description>
+</project>

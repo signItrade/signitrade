@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <parent>
+      <groupId>uk.co.signitrade</groupId>
+      <artifactId>signitrade-parent</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
+      <relativePath>../pom.xml</relativePath>
+   </parent>
+   <modelVersion>4.0.0</modelVersion>
+   <!--groupId / -->
+   <artifactId>signitrade-database</artifactId>
+   <packaging>pom</packaging>
+   <name>Database (POM Only)</name>
+   <!--version / -->
+   <!--description / -->
+   <!--url / -->
+   <prerequisites>
+      <maven>3</maven>
+   </prerequisites>
+   <!--issueManagement / -->
+   <!--ciManagement / -->
+   <!--inceptionYear / -->
+   <!--mailingLists / -->
+   <!--developers / -->
+   <!--contributors / -->
+   <!--licenses / -->
+   <!--scm / -->
+   <!--organization / -->
+   <!--build / -->
+   <!--profiles / -->
+   <!--modules / -->
+   <!--repositories / -->
+   <!--pluginRepositories / -->
+   <!--dependencies / -->
+   <!--reports / (Deprecated. Now ignored by Maven. ) -->
+   <!--reporting / -->
+   <!--dependencyManagement / -->
+   <!--distributionManagement / -->
+   <!--properties / -->
+</project>
+

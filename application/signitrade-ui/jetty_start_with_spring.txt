@@ -1,0 +1,5 @@
+DAMIT IM JETTY ALLE MODUL Abhängigkeitne
+gefunden werden muss im Maven Starter Profil
+neben jetty:run auch noch resolve workspace artifacts auf true
+
+TODO: könnte im production mode failen
