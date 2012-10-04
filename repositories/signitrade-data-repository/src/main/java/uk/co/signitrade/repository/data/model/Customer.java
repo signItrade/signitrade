@@ -5,7 +5,7 @@ import java.util.Date;
 public class Customer implements java.io.Serializable {
 
 	/**
-	 *Bikram Nayak
+	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	private Long customerId;
