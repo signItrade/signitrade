@@ -18,6 +18,11 @@
 		    <result name="success">pages/customer.jsp</result>
 		</action>
 		
+		<action name="marketscan"
+			class="marketScanAction" method="listSecurityDetailsEOD" >
+		    <result name="success">pages/MarketScan.jsp</result>
+		</action>
+		
 	</package>
 	
 </struts>

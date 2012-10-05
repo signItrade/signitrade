@@ -4,24 +4,24 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import uk.co.signitrade.repository.data.model.Customer;
+import uk.co.signitrade.repository.data.model.Customer1;
 import uk.co.signitrade.service.data.api.CustomerBo;
  
 import com.opensymphony.xwork2.ModelDriven;
  
 public class CustomerAction implements ModelDriven{
 
-	Customer customer = new Customer();
+	Customer1 customer = new Customer1();
 	
-	public Customer getCustomer() {
+	public Customer1 getCustomer() {
 		return customer;
 	}
 
-	public void setCustomer(Customer customer) {
+	public void setCustomer(Customer1 customer) {
 		this.customer = customer;
 	}
 
-	List<Customer> customerList = new ArrayList<Customer>();
+	List<Customer1> customerList = new ArrayList<Customer1>();
 	
 	CustomerBo customerBo;
 	public CustomerBo getCustomerBo() {
@@ -37,11 +37,11 @@ public class CustomerAction implements ModelDriven{
 		return customer;
 	}
 	
-	public List<Customer> getCustomerList() {
+	public List<Customer1> getCustomerList() {
 		return customerList;
 	}
 
-	public void setCustomerList(List<Customer> customerList) {
+	public void setCustomerList(List<Customer1> customerList) {
 		this.customerList = customerList;
 	}
 
@@ -68,5 +68,5 @@ public class CustomerAction implements ModelDriven{
 		return "success";
 	
 	}
-	
+
 }

@@ -1,12 +1,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"> 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
 
 	 <!-- Database Configuration -->
 	 <import resource="classpath:/uk/co/signitrade/repository/data/DataSource.xml" />
 	 <import resource="classpath:/uk/co/signitrade/repository/data/HibernateSessionFactory.xml" />
 	<bean id="customerDAO" class="uk.co.signitrade.repository.data.impl.CustomerDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="signitradeDAO" class="uk.co.signitrade.repository.data.impl.SignitradeDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 

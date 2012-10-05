@@ -1,57 +1,93 @@
 package uk.co.signitrade.repository.data.model;
 
-import java.util.Date;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name = "T_CUSTOMER", schema = "stratos")
 public class Customer implements java.io.Serializable {
-
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-	private Long customerId;
+	
+	private Long id;
 	private String name;
-	private String address;
-	private Date createdDate;
+	private String dob;//to be modified to date type
+	private String emailId;
+	private String address1;
+	private String address2;
+	private String city;
+	private String postCode;
+	private String phoneNumber;
+	private String mobileNumber;
 
-	public Customer() {
+	@Id
+	public Long getId() {
+		return id;
 	}
-
-	public Customer(String name, String address, Date createdDate) {
-		this.name = name;
-		this.address = address;
-		this.createdDate = createdDate;
+	public void setId(Long id) {
+		this.id = id;
 	}
-
-	public Long getCustomerId() {
-		return this.customerId;
-	}
-
-	public void setCustomerId(Long customerId) {
-		this.customerId = customerId;
-	}
-
+	@Column(name = "name")
 	public String getName() {
-		return this.name;
+		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getAddress() {
-		return this.address;
+	@Column(name = "dob")
+	public String getDob() {
+		return dob;
 	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	public void setDob(String dob) {
+		this.dob = dob;
 	}
-
-	public Date getCreatedDate() {
-		return this.createdDate;
+	@Column(name = "emailId")
+	public String getEmailId() {
+		return emailId;
 	}
-
-	public void setCreatedDate(Date createdDate) {
-		this.createdDate = createdDate;
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
 	}
-
+	@Column(name = "address1")
+	public String getAddress1() {
+		return address1;
+	}
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+	@Column(name = "address2")
+	public String getAddress2() {
+		return address2;
+	}
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+	//to be join if city master exists
+	@Column(name = "city")
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	@Column(name = "postCode")
+	public String getPostCode() {
+		return postCode;
+	}
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
+	@Column(name = "phoneNumber")
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	@Column(name = "mobileNumber")
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
 }

@@ -12,25 +12,72 @@
 	<name>signitrade-data-repository</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
-	 
+
 		<!-- SPRING -->
 
 
 		<!-- Spring framework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring</artifactId> 
+			<artifactId>spring-core</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-web</artifactId> 
+			<artifactId>spring-expression</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-oxm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc-portlet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
 		</dependency>
 
 		<!-- Struts 2 + Spring plugins -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-spring-plugin</artifactId> 
+			<artifactId>struts2-spring-plugin</artifactId>
 		</dependency>
 
 		<!-- DB Dependencies -->
@@ -43,34 +90,42 @@
 		<!-- Hibernate core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate</artifactId> 
+			<artifactId>hibernate</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
 		<!-- Hibernate core library dependency start -->
 		<dependency>
 			<groupId>dom4j</groupId>
-			<artifactId>dom4j</artifactId>		</dependency>
+			<artifactId>dom4j</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId> 
+			<artifactId>commons-logging</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-collections</groupId>
-			<artifactId>commons-collections</artifactId> 
+			<artifactId>commons-collections</artifactId>
 		</dependency>
 
 		<dependency>
 			<groupId>cglib</groupId>
-			<artifactId>cglib</artifactId> 
+			<artifactId>cglib</artifactId>
 		</dependency>
 		<!-- Hibernate core library dependency end -->
 
 		<!-- Hibernate query library dependency start -->
 		<dependency>
 			<groupId>antlr</groupId>
-			<artifactId>antlr</artifactId> 
+			<artifactId>antlr</artifactId>
 		</dependency>
 		<!-- Hibernate query library dependency end -->
 		<dependency>

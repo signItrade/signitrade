@@ -1,12 +1,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"> 
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
          
 	<import resource="classpath:/uk/co/signitrade/repository/data/repo-context.xml" />
 
 	<bean id="customerBo" class="uk.co.signitrade.service.data.impl.CustomerBoImpl">
 		<property name="customerDAO" ref="customerDAO" />
+	</bean>
+	<bean id="signitradeService" class="uk.co.signitrade.service.data.impl.SignitradeServiceImpl">
+		<property name="signitradeDAO" ref="signitradeDAO" />
 	</bean>
 
 </beans>
