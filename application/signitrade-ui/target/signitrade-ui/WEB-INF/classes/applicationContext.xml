@@ -1,9 +1,27 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 
 	<import resource="classpath:/uk/co/signitrade/service/data/service-context.xml" />
+	
+	
+	<tx:annotation-driven transaction-manager="transactionManager"
+		proxy-target-class="true" />
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="authenticationService" class="uk.co.signitrade.app.ui.security.DBAuthenticationService">
+		<property name="dataSource" ref="dataSource" />
+		<property name="userQuery"
+			value="select user_id,login_name,login_password,created_date from stratos.users where login_name=?" />
+
+		<property name="userAttributeClass" value="uk.co.signitrade.repository.data.model.UserModel" />
+	</bean>
 
 	<bean id="customerAction" class="uk.co.signitrade.app.ui.controller.CustomerAction">
 		<property name="customerBo" ref="customerBo" />
@@ -11,5 +29,8 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 	<bean id="marketScanAction" class="uk.co.signitrade.app.ui.controller.MarketScanAction">
 		<property name="signitradeService" ref="signitradeService" />
 	</bean> 
+	<bean id="loginAction" class="uk.co.signitrade.app.ui.controller.LoginAction">
+	</bean> 
+	
 
 </beans>

@@ -6,8 +6,12 @@
 <struts>
  	<constant name="struts.devMode" value="true" />
  	
-	<package name="default" namespace="/" extends="struts-default">
-		
+	<package name="default" namespace="/*" extends="struts-default">
+	
+		<action name="Login"
+			class="loginAction" method="authenticateUser" >
+		    <result name="success">pages/Login.jsp</result>
+		</action> 
 		<action name="addCustomerAction" 
 			class="customerAction" method="addCustomer" >
 		    <result name="success">pages/customer.jsp</result>

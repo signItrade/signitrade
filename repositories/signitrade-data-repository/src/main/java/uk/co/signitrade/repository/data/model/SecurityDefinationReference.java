@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name = "T_SECURITY_DEFN_REF", schema = "stratos")
@@ -16,8 +16,8 @@ public class SecurityDefinationReference implements java.io.Serializable {
 	private String code;
 	private StockExchangeDefinationReference stockExchangeDefinationReference;
 	private SectorInformationReference sectorInformationReference;
-	
 	@Id
+	@Column(name = "id")
 	public Long getId() {
 		return id;
 	}
@@ -38,8 +38,8 @@ public class SecurityDefinationReference implements java.io.Serializable {
 	public void setCode(String code) {
 		this.code = code;
 	}
-	@ManyToOne(fetch=FetchType.LAZY, targetEntity=StockExchangeDefinationReference.class) 
-	@JoinColumn(name="exchangeCode", updatable=false, insertable=false)
+	@OneToOne(fetch=FetchType.LAZY, targetEntity=StockExchangeDefinationReference.class) 
+	@JoinColumn(name="exchangeCode",referencedColumnName="code", updatable=false, insertable=false)
 	public StockExchangeDefinationReference getStockExchangeDefinationReference() {
 		return stockExchangeDefinationReference;
 	}
@@ -47,8 +47,8 @@ public class SecurityDefinationReference implements java.io.Serializable {
 			StockExchangeDefinationReference stockExchangeDefinationReference) {
 		this.stockExchangeDefinationReference = stockExchangeDefinationReference;
 	}
-	@ManyToOne(fetch=FetchType.LAZY, targetEntity=SectorInformationReference.class) 
-	@JoinColumn(name="sector", updatable=false, insertable=false)
+	@OneToOne(fetch=FetchType.LAZY, targetEntity=SectorInformationReference.class) 
+	@JoinColumn(name="sector",referencedColumnName="code", updatable=false, insertable=false)
 	public SectorInformationReference getSectorInformationReference() {
 		return sectorInformationReference;
 	}

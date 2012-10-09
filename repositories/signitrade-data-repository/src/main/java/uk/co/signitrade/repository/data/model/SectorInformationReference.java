@@ -11,8 +11,8 @@ public class SectorInformationReference implements java.io.Serializable {
 	private Long id;
 	private String name;
 	private String code;
-	
 	@Id
+	@Column(name = "id")
 	public Long getId() {
 		return id;
 	}

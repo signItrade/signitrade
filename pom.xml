@@ -41,21 +41,32 @@
 	<dependencyManagement>
 		<dependencies>
 
-			<!-- Too set up an application with a database, change the artifactId 
-				below to tapestry-hibernate, and add a dependency on your JDBC driver. You'll 
-				also need to add Hibernate configuration files, such as hibernate.cfg.xml. -->
+			<!--
+				Too set up an application with a database, change the artifactId
+				below to tapestry-hibernate, and add a dependency on your JDBC
+				driver. You'll also need to add Hibernate configuration files, such
+				as hibernate.cfg.xml.
+			-->
 
-			<!-- This adds automatic compression of JavaScript and CSS when in production 
-				mode. -->
+			<!--
+				This adds automatic compression of JavaScript and CSS when in
+				production mode.
+			-->
 
-			<!-- Uncomment this to add support for file uploads: <dependency> <groupId>org.apache.tapestry</groupId> 
-				<artifactId>tapestry-upload</artifactId> <version>${tapestry-release-version}</version> 
-				</dependency> -->
+			<!--
+				Uncomment this to add support for file uploads: <dependency>
+				<groupId>org.apache.tapestry</groupId>
+				<artifactId>tapestry-upload</artifactId>
+				<version>${tapestry-release-version}</version> </dependency>
+			-->
 
-			<!-- A dependency on either JUnit or TestNG is required, or the surefire 
-				plugin (which runs the tests) will fail, preventing Maven from packaging 
-				the WAR. Tapestry includes a large number of testing facilities designed 
-				for use with TestNG (http://testng.org/), so it's recommended. -->
+			<!--
+				A dependency on either JUnit or TestNG is required, or the surefire
+				plugin (which runs the tests) will fail, preventing Maven from
+				packaging the WAR. Tapestry includes a large number of testing
+				facilities designed for use with TestNG (http://testng.org/), so
+				it's recommended.
+			-->
 			<dependency>
 				<groupId>org.testng</groupId>
 				<artifactId>testng</artifactId>
@@ -71,12 +82,16 @@
 				<scope>test</scope>
 			</dependency>
 
-			<!-- Provided by the servlet container, but sometimes referenced in the 
-				application code. -->
+			<!--
+				Provided by the servlet container, but sometimes referenced in the
+				application code.
+			-->
 
 
-			<!-- Provide dependency to the Tapestry javadoc taglet which replaces 
-				the Maven component report -->
+			<!--
+				Provide dependency to the Tapestry javadoc taglet which replaces the
+				Maven component report
+			-->
 
 			<!-- signitrade-dependencies -->
 
@@ -107,10 +122,14 @@
 			<!-- SPRING -->
 
 			<!-- Spring framework -->
-			<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring</artifactId> 
-				<version>${org.springframework.version}</version> </dependency> <dependency> 
-				<groupId>org.springframework</groupId> <artifactId>spring-web</artifactId> 
-				<version>${org.springframework.version}</version> </dependency> -->
+			<!--
+				<dependency> <groupId>org.springframework</groupId>
+				<artifactId>spring</artifactId>
+				<version>${org.springframework.version}</version> </dependency>
+				<dependency> <groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${org.springframework.version}</version> </dependency>
+			-->
 
 
 
@@ -185,7 +204,36 @@
 				<version>${org.springframework.version}</version>
 				<scope>test</scope>
 			</dependency>
-
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-acl</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-cas-client</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-taglibs</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>${org.springframework.version}</version>
+			</dependency>
 
 			<!-- Struts 2 + Spring plugins -->
 			<dependency>
@@ -231,6 +279,11 @@
 				<artifactId>slf4j-api</artifactId>
 				<version>1.6.1</version>
 			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>1.2.14</version>
+			</dependency>
 			<!-- Hibernate core library dependency start -->
 			<dependency>
 				<groupId>dom4j</groupId>
@@ -255,7 +308,31 @@
 				<artifactId>commons-collections</artifactId>
 				<version>3.2.1</version>
 			</dependency>
-
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>2.0.1</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-discovery</groupId>
+				<artifactId>commons-discovery</artifactId>
+				<version>0.2</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.4</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils</artifactId>
+				<version>1.8.0</version>
+			</dependency>
 			<dependency>
 				<groupId>cglib</groupId>
 				<artifactId>cglib</artifactId>

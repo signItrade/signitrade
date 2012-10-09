@@ -7,7 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name = "T_SECURITY_DETAILS_EOD", schema = "stratos")
@@ -33,14 +33,15 @@ public class SecurityDetailsEOD implements java.io.Serializable {
 	private Long nintyDayAvgTradedAmount;
 
 	@Id
+	@Column(name="id")
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	@ManyToOne(fetch=FetchType.LAZY, targetEntity=SecurityDefinationReference.class) 
-	@JoinColumn(name="securityCode", updatable=false, insertable=false)
+	@OneToOne(fetch=FetchType.LAZY, targetEntity=SecurityDefinationReference.class) 
+	@JoinColumn(name="securityCode",referencedColumnName="code", updatable=false, insertable=false)
 	public SecurityDefinationReference getSecurityDefinationReference() {
 		return securityDefinationReference;
 	}

@@ -3,6 +3,7 @@ package uk.co.signitrade.app.ui.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import uk.co.signitrade.repository.data.filtermodel.MarketScanFilter;
 import uk.co.signitrade.repository.data.model.SecurityDetailsEOD;
 import uk.co.signitrade.service.data.api.SignitradeService;
 
@@ -10,15 +11,16 @@ import com.opensymphony.xwork2.ModelDriven;
  
 public class MarketScanAction implements ModelDriven{
 
-	SecurityDetailsEOD securityDetailsEOD = new SecurityDetailsEOD();
-	
-	public SecurityDetailsEOD getSecurityDetailsEOD() {
-		return securityDetailsEOD;
+	MarketScanFilter marketScanFilter=new MarketScanFilter();
+
+	public MarketScanFilter getMarketScanFilter() {
+		return marketScanFilter;
 	}
 
-	public void setSecurityDetailsEOD(SecurityDetailsEOD securityDetailsEOD) {
-		this.securityDetailsEOD = securityDetailsEOD;
+	public void setMarketScanFilter(MarketScanFilter marketScanFilter) {
+		this.marketScanFilter = marketScanFilter;
 	}
+
 
 	List<SecurityDetailsEOD> securityDetailsEODList = new ArrayList<SecurityDetailsEOD>();
 	
@@ -27,13 +29,12 @@ public class MarketScanAction implements ModelDriven{
 		return signitradeService;
 	}
 
-	//DI via Spring
-	public void setSignitradeService(SignitradeService customerBo) {
+	public void setSignitradeService(SignitradeService signitradeService) {
 		this.signitradeService = signitradeService;
 	}
 
 	public Object getModel() {
-		return securityDetailsEOD;
+		return marketScanFilter;
 	}
 	
 	public List<SecurityDetailsEOD> getSecurityDetailsEODList() {
@@ -45,10 +46,8 @@ public class MarketScanAction implements ModelDriven{
 	}
 
 		
-	//list all customers
 	public String listSecurityDetailsEOD() throws Exception{
-		
-		securityDetailsEODList = signitradeService.listSecurityDetailsEOD();
+		securityDetailsEODList = signitradeService.listSecurityDetailsEOD(marketScanFilter);
 		
 		return "success";
 	

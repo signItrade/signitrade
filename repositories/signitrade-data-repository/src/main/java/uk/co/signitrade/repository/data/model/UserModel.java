@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 @Entity
-//@SqlResultSetMapping(name = "userModel", entities = @EntityResult(entityClass = com.signitrade.models.UserModel.class))
+@SqlResultSetMapping(name = "userModel", entities = @EntityResult(entityClass = uk.co.signitrade.repository.data.model.UserModel.class))
 @Table(name = "users", schema = "stratos")
 public class UserModel implements java.io.Serializable {
 
@@ -27,6 +27,7 @@ public class UserModel implements java.io.Serializable {
 		this.createdDate = createdDate;
 	}
 	@Id
+	@Column(name = "user_id")
 	public long getLoginId() {
 		return loginId;
 	}
@@ -34,7 +35,7 @@ public class UserModel implements java.io.Serializable {
 	public void setLoginId(long loginId) {
 		this.loginId = loginId;
 	}
-	@Column(name = "userName")
+	@Column(name = "login_name")
 	public String getUserName() {
 		return userName;
 	}
@@ -42,7 +43,7 @@ public class UserModel implements java.io.Serializable {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	@Column(name = "password")
+	@Column(name = "login_password")
 	public String getPassword() {
 		return password;
 	}
@@ -50,7 +51,7 @@ public class UserModel implements java.io.Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	@Column(name = "createdDate")
+	@Column(name = "created_date")
 	public String getCreatedDate() {
 		return createdDate;
 	}
